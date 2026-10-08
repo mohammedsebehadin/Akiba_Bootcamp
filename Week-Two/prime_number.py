@@ -1,5 +1,5 @@
+# this request from the system to enter the number
 number=int(input("enter the number"))
-
 if(number<=1):
    print("the number must greater than one okay!")
 else:
