@@ -6,4 +6,4 @@ while number > 0:
     total += last_digit       
     number = number // 10     
 
-    print("Total:", total)
+print("Total:", total)
