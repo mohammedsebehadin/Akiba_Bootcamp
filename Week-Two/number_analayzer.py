@@ -32,4 +32,3 @@ print("even count",even_count)
 print("odd count",odd_count)
 print("largest number",largest)
 print("smallest number",smallest)
-gi
