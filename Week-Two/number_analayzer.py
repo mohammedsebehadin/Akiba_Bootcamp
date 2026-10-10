@@ -1,7 +1,7 @@
 even_count=0
 odd_count=0
 total_sum=0
-largest=-999999999
+largest=-999999999 #extreme small number 
 smallest=999999999
 
 for i in range(10):
@@ -32,3 +32,4 @@ print("even count",even_count)
 print("odd count",odd_count)
 print("largest number",largest)
 print("smallest number",smallest)
+gi
