@@ -7,9 +7,6 @@ students = [
 
 
 def validate_score(score):
-    # bool is a subclass of int in Python, so exclude it explicitly.
-    if isinstance(score, bool) or not isinstance(score, (int, float)):
-        raise ValueError("Score must be a number.")
     if score < 0 or score > 100:
         raise ValueError("Score must be between 0 and 100.")
 
@@ -37,7 +34,7 @@ def calculate_average(students):
     for student in students:
         total += student["score"]
 
-        return total / len(students)
+    return total / len(students)
 
 
 def find_highest_and_lowest(students):
@@ -53,7 +50,7 @@ def find_highest_and_lowest(students):
             if student["score"] < lowest["score"]:
                 lowest = student
 
-                return {"highest": highest, "lowest": lowest}
+    return {"highest": highest, "lowest": lowest}
 
 
 def count_passed_and_failed(students):
@@ -66,7 +63,7 @@ def count_passed_and_failed(students):
         else:
             failed += 1
 
-            return {"passed": passed, "failed": failed}
+    return {"passed": passed, "failed": failed}
 
 
 def students_above_average(students, average):
@@ -76,19 +73,19 @@ def students_above_average(students, average):
         if student["score"] > average:
             above_average.append(student)
 
-            return above_average
+    return above_average
 
 
 def generate_class_report(students):
     if len(students) == 0:
         print("No student results to report.")
-        return
+        return None
 
     for student in students:
         validate_score(student["score"])
 
         average = calculate_average(students)
-        extremes = find_highest_and_lowest(students)
+        score_summary = find_highest_and_lowest(students)
         counts = count_passed_and_failed(students)
         above_average = students_above_average(students, average)
 
@@ -100,12 +97,12 @@ def generate_class_report(students):
 
             print(f"Class average: {average:.2f}")
             print(
-                f'Highest score: {extremes["highest"]["name"]} '
-                f'({extremes["highest"]["score"]})'
+                f'Highest score: {score_summary["highest"]["name"]} '
+                f'({score_summary["highest"]["score"]})'
             )
             print(
-                f'Lowest score: {extremes["lowest"]["name"]} '
-                f'({extremes["lowest"]["score"]})'
+                f'Lowest score: {score_summary["lowest"]["name"]} '
+                f'({score_summary["lowest"]["score"]})'
             )
             print(f'Passed: {counts["passed"]}')
             print(f'Failed: {counts["failed"]}')
@@ -115,4 +112,4 @@ def generate_class_report(students):
                 print(f'{student["name"]}: {student["score"]}')
 
 
-                generate_class_report(students)
+generate_class_report(students)
