@@ -29,7 +29,7 @@ def total_inventory_value():
 def low_stock_report(threshold=5):
     return [p["name"] for p in inventory.values() if p["stock"] < threshold]
 if __name__ == "__main__":
-    
+                                                                                
         print("--- Adding Products ---")
         add_product("Laptop", 999.99, 10)
         add_product("Mouse", 25.50, 3)     # Low stock item (< 5)
