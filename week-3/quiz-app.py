@@ -52,12 +52,13 @@ correct_point=0
 for question in questions:
   print(display_question(question))
 user_choice=getValid_answer(question)
-if check_answer(user_choice,questions=['answer']):
+if check_answer(user_choice,question['answer']):
   print("correct!")
   correct_point+=1
 else:
   print("wrong")
 print(f"final sore:{correct_point}/{len(questions)}")
+
 
       
       
