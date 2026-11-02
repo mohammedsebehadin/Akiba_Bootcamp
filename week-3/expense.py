@@ -4,7 +4,7 @@ expenses = [
     {"description": "Groceries", "category": "Food", "amount": 450},
     {"description": "Internet", "category": "Bills", "amount": 300}
 ]
-print(expenses[0])
+# print(expenses[0])
 def add_expense(expense_list,desc,cat,amt):
     new_expense={
         "description":desc,
